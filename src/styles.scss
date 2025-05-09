@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./variables" as vars;
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: vars.$app-background;
+  color: vars.$text-color;
+  font-family: sans-serif;
+  overflow: hidden;
+}

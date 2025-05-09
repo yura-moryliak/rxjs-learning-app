@@ -1,0 +1,14 @@
+@import '../variables';
+
+:host {
+  display: grid;
+  grid-template-columns: 22em auto;
+  height: 100%;
+
+  .app-container {
+    overflow: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+}

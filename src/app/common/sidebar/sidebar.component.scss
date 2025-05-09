@@ -1,0 +1,27 @@
+@use "../../../variables" as vars;
+
+:host {
+  background-color: vars.$sidebar-background;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+
+    &.inner-list {
+      border-left: 0.063em solid vars.$text-color;
+    }
+
+    li {
+      margin-bottom: 1em;
+      margin-left: 1em;
+
+      a {
+        color: vars.$text-color;
+      }
+    }
+  }
+}

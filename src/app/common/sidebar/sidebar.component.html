@@ -1,0 +1,25 @@
+<ul>
+  @for (link of links; track $index) {
+    <li>
+      <a [routerLink]="link.path">{{ link.label }}</a>
+
+      @if (link.children) {
+        <ng-container *ngTemplateOutlet="childrenLinksTpl; context: { $implicit: link.children }"></ng-container>
+      }
+    </li>
+  }
+</ul>
+
+<ng-template #childrenLinksTpl let-item>
+  <ul class="inner-list">
+    @for (child of item; track $index) {
+      <li>
+        <a [routerLink]="child.path">{{ child.label }}</a>
+
+        @if (child.children) {
+          <ng-container *ngTemplateOutlet="childrenLinksTpl; context: { $implicit: child.children }"></ng-container>
+        }
+      </li>
+    }
+  </ul>
+</ng-template>
