@@ -1,0 +1,6 @@
+@use "../../../../../../variables" as vars;
+@use "../../../../../../task-host.mixin" as task-host;
+
+:host {
+  @include task-host.task-container;
+}
