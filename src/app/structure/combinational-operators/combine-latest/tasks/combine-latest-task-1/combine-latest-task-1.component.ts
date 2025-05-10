@@ -25,7 +25,7 @@ export class CombineLatestTask1Component implements OnInit, OnDestroy {
     debounceTime(500),
     distinctUntilChanged()
   );
-  private subscription: Subscription = new Subscription();
+  private readonly subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
     const sub: Subscription = combineLatest([this.firstNameSource$, this.lastNameSource$]).subscribe({

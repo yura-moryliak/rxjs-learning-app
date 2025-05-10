@@ -1,0 +1,9 @@
+@use "./variables" as vars;
+
+@mixin task-container {
+  display: block;
+  border-radius: 0.5em;
+  background-color: vars.$sidebar-background;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}

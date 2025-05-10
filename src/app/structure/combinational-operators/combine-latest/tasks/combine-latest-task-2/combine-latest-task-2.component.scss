@@ -3,14 +3,4 @@
 
 :host {
   @include task-host.task-container;
-  form {
-    display: flex;
-    gap: 1em;
-
-    div {
-      display: flex;
-      gap: 0.5em;
-      align-items: center;
-    }
-  }
 }
