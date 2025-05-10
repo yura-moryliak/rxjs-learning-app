@@ -1,0 +1,25 @@
+<app-task-overview
+  title="Task 1 - mid level"
+  description="Form controls combination">
+  <small>Create a form with two input fields (e.g., first name and last name). Using combineLatest, combine them into a full name and display it in real-time.</small>
+</app-task-overview>
+
+<form>
+  <div>
+    <label for="firstName">First name</label>
+    <input id="firstName" type="text" placeholder="Type in first name" [formControl]="firstNameFormControl" />
+  </div>
+  <div>
+    <label for="lastName">Last name</label>
+    <input id="lastName" type="text" placeholder="Type in last name" [formControl]="lastNameFormControl" />
+  </div>
+</form>
+
+<br />
+<div>
+  @if (fullName) {
+    <code>Full name: {{ fullName }}</code>
+  } @else {
+    <code>To see <i>First Name</i> and <i>Last Name</i> type in controls</code>
+  }
+</div>
