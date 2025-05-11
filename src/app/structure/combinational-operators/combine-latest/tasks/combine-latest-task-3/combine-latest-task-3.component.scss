@@ -3,4 +3,12 @@
 
 :host {
   @include task-host.task-container;
+
+  .online-active {
+    color: green;
+  }
+
+  .offline-inactive {
+    color: orangered;
+  }
 }
