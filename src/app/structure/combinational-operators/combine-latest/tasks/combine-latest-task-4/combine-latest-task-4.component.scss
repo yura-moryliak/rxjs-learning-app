@@ -1,0 +1,13 @@
+@use '../../../../../../variables' as vars;
+@use '../../../../../../task-host.mixin' as task-host;
+
+:host {
+  @include task-host.task-container;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

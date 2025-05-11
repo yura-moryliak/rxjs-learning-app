@@ -1,1 +1,22 @@
-<p>combine-latest-task-4 works!</p>
+<app-task-overview
+  title="Task 4 - mid level"
+  description="API combination with combineLatest">
+  <small>Зроби два HTTP-запити до різних API. Поєднай результати за допомогою combineLatest та відобрази злиту інформацію на екрані.</small>
+  <ul>
+    <li>https://api.thecatapi.com/v1/images/search?limit=10</li>
+    <li>https://jsonplaceholder.typicode.com/todos</li>
+  </ul>
+</app-task-overview>
+
+@if (catsAndTodos$ | async; as catsAndTodos) {
+  <ul>
+    @for (cat of catsAndTodos.cats.slice(0, 4); track $index) {
+      <li>
+        <img [src]="cat.url" alt="{{ cat.id }}">
+      </li>
+    }
+    @for (todo of catsAndTodos.todos.slice(0, 4); track $index) {
+      <li>{{ todo.id }}: {{ todo.title }}</li>
+    }
+  </ul>
+}
