@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {TaskOverviewComponent} from '../../../../../common/task-overview/task-overview.component';
 import {combineLatest, debounceTime, distinctUntilChanged, Observable, Subscription} from 'rxjs';
+import {TaskBaseComponent} from '../../../../task.base';
+import {TaskOverviewComponent} from '../../../../../common/task-overview/task-overview.component';
 
 @Component({
   selector: 'app-combine-latest-task-1',
@@ -12,7 +13,7 @@ import {combineLatest, debounceTime, distinctUntilChanged, Observable, Subscript
   templateUrl: './combine-latest-task-1.component.html',
   styleUrl: './combine-latest-task-1.component.scss'
 })
-export class CombineLatestTask1Component implements OnInit, OnDestroy {
+export class CombineLatestTask1Component extends TaskBaseComponent implements OnInit, OnDestroy {
   firstNameFormControl: FormControl<string | null> = new FormControl('');
   lastNameFormControl: FormControl<string | null> = new FormControl('');
   fullName: string | undefined;

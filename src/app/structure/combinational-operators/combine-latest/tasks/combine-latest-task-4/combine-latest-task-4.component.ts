@@ -2,6 +2,7 @@ import {Component, inject, OnDestroy} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AsyncPipe} from '@angular/common';
 import {Subscription, combineLatest, timer, mergeMap, Observable, map} from 'rxjs';
+import {TaskBaseComponent} from '../../../../task.base';
 import {TaskOverviewComponent} from '../../../../../common/task-overview/task-overview.component';
 
 interface CatInterface {
@@ -27,7 +28,7 @@ interface TodoInterface {
   templateUrl: './combine-latest-task-4.component.html',
   styleUrl: './combine-latest-task-4.component.scss'
 })
-export class CombineLatestTask4Component implements OnDestroy {
+export class CombineLatestTask4Component extends TaskBaseComponent implements OnDestroy {
   private readonly httpClient: HttpClient = inject(HttpClient);
   private readonly subscription: Subscription = new Subscription();
 

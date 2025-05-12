@@ -3,18 +3,21 @@
   description="User status observement">
   <small>Create two `BehaviorSubject` objects that represent the user's status (online/offline) and activity (active/inactive). Use `combineLatest` to output combinations of statuses.</small>
 </app-task-overview>
+<button (click)="isCollapsed = !isCollapsed">{{ isCollapsed ? 'Expand' : 'Collapse' }}</button>
 
-<div>
-  <code>User becomes {{ isStatusChanged ? 'Offline' : 'Online' }} after: {{ onlineOfflineTimerValue }}</code>
-</div>
-<div>
-  <code>User becomes {{ isStatusChanged ? 'Inactive' : 'Active' }} after: {{ activeInactiveTimerValue }}</code>
-</div>
+@if (!isCollapsed) {
+  <div>
+    <code>User becomes {{ isStatusChanged ? 'Offline' : 'Online' }} after: {{ onlineOfflineTimerValue }}</code>
+  </div>
+  <div>
+    <code>User becomes {{ isStatusChanged ? 'Inactive' : 'Active' }} after: {{ activeInactiveTimerValue }}</code>
+  </div>
 
-<div>
-  <p>User is: <b>@if (isUserOnline) {<span class="online-active">Online</span>} @else {<span class="offline-inactive">Offline</span>}</b> and <b>@if (isUserActive) {<span class="online-active">Active</span>} @else {<span class="offline-inactive">Inactive</span>}</b></p>
-</div>
+  <div>
+    <p>User is: <b>@if (isUserOnline) {<span class="online-active">Online</span>} @else {<span class="offline-inactive">Offline</span>}</b> and <b>@if (isUserActive) {<span class="online-active">Active</span>} @else {<span class="offline-inactive">Inactive</span>}</b></p>
+  </div>
 
-@if (showRestartButton) {
-  <button class="restart-button" (click)="restartTimers()">Restart timers</button>
+  @if (showRestartButton) {
+    <button class="restart-button" (click)="restartTimers()">Restart timers</button>
+  }
 }

@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscription, timer, combineLatest} from 'rxjs';
+import {TaskBaseComponent} from '../../../../task.base';
 import {TaskOverviewComponent} from '../../../../../common/task-overview/task-overview.component';
 
 @Component({
@@ -10,7 +11,7 @@ import {TaskOverviewComponent} from '../../../../../common/task-overview/task-ov
   templateUrl: './combine-latest-task-2.component.html',
   styleUrl: './combine-latest-task-2.component.scss'
 })
-export class CombineLatestTask2Component implements OnInit, OnDestroy {
+export class CombineLatestTask2Component extends TaskBaseComponent implements OnInit, OnDestroy {
   private readonly subscription: Subscription = new Subscription();
 
   timer1$: Observable<number> = timer(0, 1000);

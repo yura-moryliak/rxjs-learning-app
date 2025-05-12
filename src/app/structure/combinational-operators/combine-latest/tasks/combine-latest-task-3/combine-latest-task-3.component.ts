@@ -1,19 +1,18 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AsyncPipe} from '@angular/common';
 import {BehaviorSubject, map, Observable, Subscription, take, timer, combineLatest} from 'rxjs';
+import {TaskBaseComponent} from '../../../../task.base';
 import {TaskOverviewComponent} from '../../../../../common/task-overview/task-overview.component';
 
 
 @Component({
   selector: 'app-combine-latest-task-3',
   imports: [
-    TaskOverviewComponent,
-    AsyncPipe
+    TaskOverviewComponent
   ],
   templateUrl: './combine-latest-task-3.component.html',
   styleUrl: './combine-latest-task-3.component.scss'
 })
-export class CombineLatestTask3Component implements OnInit, OnDestroy {
+export class CombineLatestTask3Component extends TaskBaseComponent implements OnInit, OnDestroy {
   private readonly subscription: Subscription = new Subscription();
 
   private onlineSubscription: Subscription = new Subscription();

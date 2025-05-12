@@ -3,15 +3,18 @@
   description="Timers combination">
   <small>Use two timers with different intervals (e.g. 1 and 2 seconds). Combine them with combineLatest and print the current values of both timers.</small>
 </app-task-overview>
+<button (click)="isCollapsed = !isCollapsed">{{ isCollapsed ? 'Expand' : 'Collapse' }}</button>
 
-<code>
-  <div>
-    <i>Timer 1: {{ timer1Value }} seconds</i>
-  </div>
-  <div>
-    <i>Delay: 1 second between timers</i>
-  </div>
-  <div>
-    <i>Timer 2: {{ timer2Value }} seconds</i>
-  </div>
-</code>
+@if (!isCollapsed) {
+  <code>
+    <div>
+      <i>Timer 1: {{ timer1Value }} seconds</i>
+    </div>
+    <div>
+      <i>Delay: 1 second between timers</i>
+    </div>
+    <div>
+      <i>Timer 2: {{ timer2Value }} seconds</i>
+    </div>
+  </code>
+}

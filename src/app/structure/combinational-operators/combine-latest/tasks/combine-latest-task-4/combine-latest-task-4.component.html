@@ -7,16 +7,19 @@
     <li>https://jsonplaceholder.typicode.com/todos</li>
   </ul>
 </app-task-overview>
+<button (click)="isCollapsed = !isCollapsed">{{ isCollapsed ? 'Expand' : 'Collapse' }}</button>
 
-@if (catsAndTodos$ | async; as catsAndTodos) {
-  <ul>
-    @for (cat of catsAndTodos.cats.slice(0, 4); track $index) {
-      <li>
-        <img [src]="cat.url" alt="{{ cat.id }}">
-      </li>
-    }
-    @for (todo of catsAndTodos.todos.slice(0, 4); track $index) {
-      <li>{{ todo.id }}: {{ todo.title }}</li>
-    }
-  </ul>
+@if (!isCollapsed) {
+  @if (catsAndTodos$ | async; as catsAndTodos) {
+    <ul>
+      @for (cat of catsAndTodos.cats.slice(0, 4); track $index) {
+        <li>
+          <img [src]="cat.url" alt="{{ cat.id }}">
+        </li>
+      }
+      @for (todo of catsAndTodos.todos.slice(0, 4); track $index) {
+        <li>{{ todo.id }}: {{ todo.title }}</li>
+      }
+    </ul>
+  }
 }
