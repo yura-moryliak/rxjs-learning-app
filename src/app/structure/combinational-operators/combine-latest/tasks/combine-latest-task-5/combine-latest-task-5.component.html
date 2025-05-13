@@ -1,10 +1,11 @@
 <app-task-overview
   title="Task 5 - mid level"
   description="Conditional filtering">
-  <small>Об’єднай два стріми чисел з використанням combineLatest, але виводь результат лише тоді, коли обидва значення більші за 10.</small>
+  <small>Combine two streams of numbers using `combineLatest`, but emit the result only when both values are greater than 10</small>
 </app-task-overview>
 <button (click)="isCollapsed = !isCollapsed">{{ isCollapsed ? 'Expand' : 'Collapse' }}</button>
 
 @if (!isCollapsed) {
-
+  <pre>Number 1: {{ number1 }}</pre>
+  <pre>Number 2: {{ number2 }}</pre>
 }
